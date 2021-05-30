@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+  <h3>Infect Patient</h3>
+  <mat-form-field class="max-width">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="John Doe" focus formControlName="name" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Gender</mat-label>
+    <select matNativeControl formControlName="gender">
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+      <option value="O">Other</option>
+    </select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="max-width">
+    <mat-label>Birth Date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="birthDate" autocomplete="new-password">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div style="display: flex; justify-content: flex-end;">
+    <button mat-button (click)="dialogRef.close()" class="margin-right">CANCEL</button>
+    <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">ASSIGN RANDOM SICKNESS</button>
+  </div>
+</form>

@@ -1,0 +1,24 @@
+<app-container class="centered">
+  <mat-card>
+    <form class="centered" [formGroup]="form" (ngSubmit)="login()">
+      <h3>Login</h3>
+      <mat-form-field class="max-width">
+        <mat-label>E-mail</mat-label>
+        <input type="email" name="email" matInput formControlName="email">
+      </mat-form-field>
+      <mat-form-field class="max-width">
+        <mat-label>Password</mat-label>
+        <input type="password" name="password" matInput formControlName="password">
+      </mat-form-field>
+      <mat-chip-list *ngIf="alertMessage">
+        <mat-chip color="warn" class="max-width" style="margin-top: 16px;" selected>
+          {{alertMessage}}
+        </mat-chip>
+      </mat-chip-list>
+      <br>
+      <br>
+      <button type="submit" mat-raised-button color="primary" class="max-width"
+        [disabled]="form.invalid">LOGIN</button>
+    </form>
+  </mat-card>
+</app-container>

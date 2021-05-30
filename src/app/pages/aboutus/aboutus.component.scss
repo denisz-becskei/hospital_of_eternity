@@ -1,0 +1,15 @@
+mat-card {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: 20px;
+    width: 85vw;
+}
+
+@media (max-width: 480px) {
+  img {
+    width: 80vw;
+  }
+}
+
+

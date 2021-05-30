@@ -1,0 +1,13 @@
+<mat-card *ngIf="patient" appOnHover>
+  <mat-card-header *ngIf="patient.gender">
+    <mat-card-title>{{patient.name | namePipe: patient.gender}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-header *ngIf="!patient.gender">
+    <mat-card-title>{{patient.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <!--<p *ngIf="patient.birthDate">{{patient.birthDate | date: 'medium'}}</p> sehogy sem jó,
+      mindig timestampben adja vissza, pedig date-ben kellene-->
+    <p>Assigned sickness: {{patient.infection}}</p>
+  </mat-card-content>
+</mat-card>

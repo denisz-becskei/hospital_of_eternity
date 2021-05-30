@@ -1,0 +1,17 @@
+mat-card {
+  background-color: lightgray;
+  width: 85vw;
+  height: 125px;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}

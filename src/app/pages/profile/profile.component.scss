@@ -1,0 +1,27 @@
+.margin-bottom {
+  margin-bottom: 16px;
+}
+
+.mat-radio-button~.mat-radio-button {
+  margin-left: 16px;
+}
+
+.mat-radio-group {
+  display: flex;
+
+  .mat-radio-button {
+    flex: 1;
+  }
+}
+
+mat-card {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+@media (min-width: 480px) {
+  mat-card {
+    width: 80vw;
+  }
+}

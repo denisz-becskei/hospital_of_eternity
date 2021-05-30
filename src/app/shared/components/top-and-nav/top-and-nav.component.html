@@ -1,0 +1,50 @@
+<img src="../../../assets/images/NavImg.png">
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-button *ngFor="let item of categories" [routerLink]="[ item.url ]" routerLinkActive="active">
+      {{item.title}}&nbsp;
+      <mat-icon>{{item.icon}}</mat-icon>
+    </button>
+    <button mat-button *ngIf="this.authService.getCurrentUser() !== null" [routerLink] = "'profile'">
+      Profile
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <button mat-button *ngIf="this.authService.getCurrentUser() !== null" [routerLink] = "'listing'">
+      Listing
+      <mat-icon>description</mat-icon>
+    </button>
+    <span style="flex: 1 1;"></span>
+    <div *ngIf="this.authService.getCurrentUser() === null">
+      <button mat-button [matMenuTriggerFor]="menu">
+        {{user()}}&nbsp;
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button mat-button [routerLink]="'login'">
+          Login&nbsp;
+          <mat-icon>login</mat-icon>
+        </button>
+        <br>
+        <button mat-button [routerLink]="'register'">
+          Register&nbsp;
+          <mat-icon>account_box</mat-icon>
+        </button>
+      </mat-menu>
+    </div>
+    <div *ngIf="this.authService.getCurrentUser() !== null">
+      <button mat-button [matMenuTriggerFor]="menu">
+        {{user()}}&nbsp;
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button mat-button [routerLink]="'home'" (click)="logout();">
+          Logout&nbsp;
+          <mat-icon>logout</mat-icon>
+        </button>
+        <br>
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

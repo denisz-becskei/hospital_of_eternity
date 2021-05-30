@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/hospital-of-eternity",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

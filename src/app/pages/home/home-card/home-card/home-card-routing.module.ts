@@ -1,0 +1,15 @@
+import { HomeCardComponent } from './home-card.component';
+import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+
+const routes: Routes = [
+  { path: '',
+    component: HomeCardComponent
+  },
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class HomeCardRoutingModule {}
